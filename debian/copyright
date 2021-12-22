@@ -1,15 +1,15 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: incron
-Upstream-Contact: Lukas Jelinek <lukas@aiken.cz>
-Source: http://inotify.aiken.cz/
+Upstream-Contact: Lukas Jelinek <lukas@aiken.cz>, Andreas Altair Redmer <altair.ibn.la.ahad.sy@gmail.com>
+Source: https://github.com/rodolfoap/incron
 
 Files: *
 Copyright: 2006-2012, Lukas Jelinek, <lukas@aiken.cz>
-           2014-2015, Andreas Altair Redmer, <altair.ibn.la.ahad.sy@gmail.com>
+           2014-2019, Andreas Altair Redmer <altair.ibn.la.ahad.sy@gmail.com>
 License: GPL-2+
 
 Files: debian/*
-Copyright: 2008-2014, Emmanuel Bouthenot <kolter@debian.org>
+Copyright: 2008-2019, Emmanuel Bouthenot <kolter@debian.org>
 License: GPL-2+
 
 License: GPL-2+

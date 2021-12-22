@@ -4,15 +4,17 @@ Priority: extra
 Maintainer: Emmanuel Bouthenot <kolter@debian.org>
 Uploaders: Michael Prokop <mika@grml.org>
 Build-Depends:
-    debhelper (>= 9),
-    dh-systemd (>= 1.5)
-Standards-Version: 3.9.6
+    debhelper (>= 12),
+    debhelper-compat (= 12)
+Rules-Requires-Root: no
+Standards-Version: 4.4.1
 Homepage: https://github.com/ar-/incron
-Vcs-Git: https://github.com/ar-/incron.git
-Vcs-Browser: https://github.com/ar-/incron
+Vcs-Git: https://github.com/rodolfoap/incron.git
+Vcs-Browser: https://github.com/rodolfoap/incron
 
 Package: incron
 Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}, lsb-base (>= 3.2-14), adduser
 Description: cron-like daemon which handles filesystem events
  incron is an "inotify cron" system. It works like the regular cron but is

@@ -7,7 +7,7 @@ incron for Debian
 
  Users are not allowed to use incron by default because a bad usage of incron
  with (loops) can make the whole system hanging. See BUGS section in incrond(8)
- manpage. Be carefull with users allowed to use incron.
+ manpage. Be careful with users allowed to use incron.
 
  Systems incrontabs goes to /etc/incron.d .
 

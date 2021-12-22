@@ -29,3 +29,10 @@
 incrond
 incrontab
 
+# Build artifacts
+/doc/
+*.bz2
+*.gz
+*.zip
+sha1.txt
+
