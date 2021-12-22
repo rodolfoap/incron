@@ -5,8 +5,8 @@ SYSDATADIR = /etc/incron.d
 INITDIR = /etc/init
 CFGDIR = /etc
 MANPATH = $(PREFIX)/share/man
-RELEASE = incron-`cat VERSION`
-RELEASEDIR = /tmp/$(RELEASE)
+RELEASE = incron_`cat VERSION`
+RELEASEDIR = ./$(RELEASE)
 DOCDIR = $(PREFIX)/share/doc/$(RELEASE)/
 
 USER = root
@@ -82,28 +82,19 @@ uninstall-man:
 update:		uninstall install
 
 release:
-	doxygen
+	#doxygen
 	mkdir -p $(RELEASEDIR)
-	cp -r doc $(RELEASEDIR)
+	#cp -r doc $(RELEASEDIR)
 	cp *.h $(RELEASEDIR)
 	cp *.cpp $(RELEASEDIR)
 	cp incron.conf.example $(RELEASEDIR)
 	cp Makefile CHANGELOG COPYING LICENSE-GPL LICENSE-LGPL LICENSE-X11 README TODO VERSION $(RELEASEDIR)
 	cp incrond.8 incrontab.1 incrontab.5 incron.conf.5 $(RELEASEDIR)
-	tar -c -f $(RELEASE).tar -C $(RELEASEDIR)/.. $(RELEASE)
-	bzip2 -9 $(RELEASE).tar
-	tar -c -f $(RELEASE).tar -C $(RELEASEDIR)/.. $(RELEASE)
-	gzip --best $(RELEASE).tar
-	echo #!/bin/sh > myzip
-	echo cd $(RELEASEDIR)/.. >> myzip
-	echo zip -r -9 `pwd`/$(RELEASE).zip $(RELEASE) >> myzip
-	chmod 0700 myzip
-	./myzip
-	rm -f myzip
-	sha1sum $(RELEASE).tar.bz2 > sha1.txt
-	sha1sum $(RELEASE).tar.gz >> sha1.txt
-	sha1sum $(RELEASE).zip >> sha1.txt
-	rm -rf $(RELEASEDIR)
+	cp -r debian/ $(RELEASEDIR)
+	tar -c -f $(RELEASE).orig.tar -C $(RELEASEDIR)/.. $(RELEASE)
+	gzip --best $(RELEASE).orig.tar
+	sha1sum $(RELEASE).orig.tar.gz > sha1.txt
+	(cd $(RELEASEDIR); debuild -us -uc)
 
 release-clean:
 	rm -rf doc

@@ -1,6 +1,6 @@
 Source: incron
 Section: admin
-Priority: extra
+Priority: optional
 Maintainer: Emmanuel Bouthenot <kolter@debian.org>
 Uploaders: Michael Prokop <mika@grml.org>
 Build-Depends:

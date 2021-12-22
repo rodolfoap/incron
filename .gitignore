@@ -31,8 +31,15 @@ incrontab
 
 # Build artifacts
 /doc/
+*.build
+*.buildinfo
 *.bz2
+*.changes
+*.deb
+*.dsc
 *.gz
+*.tar
+*.xz
 *.zip
 sha1.txt
-
+/incron_*
